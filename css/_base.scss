@@ -45,6 +45,7 @@ h1 {
 	font-family:$titlefont;
 	@extend %text-uppercase;
 	@include font-size(5);
+	line-height: 1em;
 	@extend %full-width;
 	@extend %text-center;
 	@extend %text-shadow;

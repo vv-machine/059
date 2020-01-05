@@ -63,7 +63,7 @@
   }
 }
 .header-content {
-  @include display(grid, $grid-template-columns:155px 8fr 2fr);
+  @include display(grid, $grid-template-columns:130px 8fr 2fr);
   max-width: 1600px;
   @extend %center;
 		.logo a img{
@@ -89,9 +89,6 @@
     @extend %text-uppercase;
   }
 
-  li {
-      margin-bottom:2.5px;
-  }
 }
 .header-lan {
     justify-self:end;
@@ -300,6 +297,7 @@
   }
 }
 .contacto-content {
+
    @extend %text-center;
    min-height:100vh;
    .mail {
@@ -338,7 +336,7 @@
     @extend %absolute;
     @extend %full-width;
     @include offset($bottom: 0, $left:0);
-    padding-bottom:120px;
+    padding-bottom:100px;
     @extend %darkcolors;
 		border-top: $bdark;
     @include box-shadow(0, -5px, 8px, rgba(0,0,0,0.2));

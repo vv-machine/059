@@ -52,7 +52,15 @@
 				transform-origin: center bottom;
 			}
 }
-
+#contacto {
+	padding-bottom: 50%;
+	@include tablet {
+	padding-bottom: 0%;
+	}
+	@include desktop {
+	padding-bottom: 0%;
+	}
+}
 #footer {
 	@include offset($bottom: 0, $left:0, $z-index:2, $height:auto);
 	@extend %fixed;
