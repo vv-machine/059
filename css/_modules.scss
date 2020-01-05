@@ -1,0 +1,435 @@
+#enter {
+  @extend %fixed;
+  padding-top:120px;
+  @extend %full-width;
+  @extend %text-center;
+  @include offset($top: 0, $left:0, $z-index:10, $height:100vh);
+  background-color: black;
+  @extend %text-uppercase;
+  color:$hl;
+  transition: all 1s;
+  opacity:0;
+  display:none;
+  strong {
+    @include animation(fadein 0.5s linear 0s 1 forwards);
+    @extend %padding;
+    @extend %block;
+    @extend %relative;
+    @include font-size(5);
+    @include desktop {
+      @include font-size(6);
+    }
+  }
+  label {
+    @include animation(fadein 0.5s linear 0s 1 forwards);
+    @extend %text-uppercase;
+    @extend %relative;
+    @extend %padding;
+    @extend %darkcolors;
+    border:none;
+    transition: all 0.5s;
+    cursor: pointer;
+    @include font-size(5);
+
+    @include desktop {
+      @include font-size(6);
+    }
+    &:hover:first-of-type, &:active {
+      color:$hl;
+    }
+    &:hover:first-of-type::after, &:active:first-of-type::after{
+        content: "\1F60A";
+        @extend %absolute;
+        @extend %full-width;
+        @extend %block;
+        color:$light;
+        @include offset($top: 100%, $left:0);
+	      @include animation(fadein 0.2s ease-in forwards);
+        @include font-size(4);
+    }
+    &:hover:last-of-type, &:active:last-of-type {
+      color:red;
+    }
+    &:hover:last-of-type::after, &:active:last-of-type::after  {
+      color:red;
+      content: "\1F61E";
+      @extend %absolute;
+      @extend %full-width;
+      @extend %block;
+      @include offset($top: 100%, $left:0);
+      @include animation(fadein 0.2s ease-in forwards);
+      @include font-size(4);
+    }
+  }
+}
+.header-content {
+  @include display(grid, $grid-template-columns:155px 8fr 2fr);
+  max-width: 1600px;
+  @extend %center;
+		.logo a img{
+			margin-left:-8px;
+      width:140px;
+		}
+}
+
+.header-nav ul{
+  @include display(block, $grid-template-columns:  null);
+  @extend %margin-right-left;
+  @include tablet {
+    @include display(grid, $grid-template-columns: repeat(3,2fr));
+  }
+  @include desktop {
+    @include display(grid, $grid-template-columns: repeat(3,2fr));
+  }
+  a {
+    @include desktop {
+      @include font-size(3);
+    }
+    @include font-size(2);
+    @extend %text-uppercase;
+  }
+
+  li {
+      margin-bottom:2.5px;
+  }
+}
+.header-lan {
+    justify-self:end;
+    margin-right:20px;
+
+    li {
+      margin: 0 0 2.5px;
+      height:22px;
+      a {
+      line-height:1;
+      margin: 0 0 5px;
+
+      img {
+        width:30px;
+      }
+    }
+  }
+
+
+}
+.first {
+  h1 {
+
+    @include font-size(5);
+    line-height: 0.95em;
+    margin-top:10px;
+    @include tablet {
+      margin-top:0px;
+      margin-bottom:-15px;
+      line-height:1.1em;
+      @include font-size(7);
+  	}
+    @include desktop {
+      margin-top:1px;
+      line-height:1;
+      @include font-size(7);
+      margin-bottom:-12px;
+  	}
+  }
+  &-gallery {
+    height:auto;
+    @extend %full-width;
+    @extend %shadow;
+    background-color: $lighttrans;
+    iframe {
+        margin-bottom:-5px;
+      }
+  }
+  &-content {
+    @extend %full-width;
+    @extend %relative;
+    &-strong {
+      @extend %text-center;
+      width:calc(100% - 20px);
+      @extend %block;
+      @extend %relative;
+      max-width:100%;
+      border-top:$blight;
+      border-bottom: $bdark;
+      @extend %lightcolors;
+      @extend %text-uppercase;
+      padding:0 $space;
+    }
+    &-text{
+
+      @extend %darkcolors;
+      @extend %shadow;
+      @extend %margin-bottom;
+      @extend %padding;
+      column-count: auto;
+      @extend %text-center;
+      @extend %center;
+      h3 {
+        @extend %column-full;
+      }
+/*      &:first-of-type  {
+        text-align:center;
+
+      }*/
+      @include desktop {
+
+        padding: $space 20px;
+        width:calc(100%-40px);
+
+        .first-content-text-wrap {
+          display:block;
+          position:relative;
+          width:100%;
+          max-width: 1600px;
+          margin:0 auto;
+
+          @include display(grid, $grid-template-columns: repeat(2,2fr), $grid-column-gap:$space);
+        }
+      }
+
+
+  	}
+    &-text:nth-of-type(2)    {
+          margin-top:20px;
+          strong {
+            color:lighten(  rgba(0,78,38,0.7), 15% );
+            @extend %text-center;
+            @extend %full-width;
+
+            @extend %margin-bottom;
+          }
+          ol {
+            list-style: none;
+            counter-reset: item;
+            max-width:1600px;
+            @extend %center;
+            @extend %margin-top;
+            li {
+              @extend %margin-bottom;
+              margin-left: 2em;
+              display:inline-block;
+              @extend %relative;
+              vertical-align: top;
+              width: calc(100vw-2em);
+              @extend %text-left;
+              &:before {
+                 @extend %absolute;
+                 @include offset($left:-1.8em);
+                 @include font-size(1);
+                 @include border-radius(100%);
+                 width: 1.2em;
+                 text-align: center;
+                 display: inline-block;
+                 font-weight: bold;
+                 background-color: lighten(  rgba(0,78,38,0.7), 15% );
+                 counter-increment: section;
+                 content: counter(section) ;
+               }
+             }
+          }
+    }
+  }
+}
+.aye {
+  @extend %margin-bottom;
+  @extend %margin-right-left;
+  max-width: 1600px;
+  @extend %center;
+
+  &-content {
+    padding:$space;
+    @include desktop {
+
+    @include display(grid, $grid-template-columns:3fr 1fr, $grid-gap:$space);
+    }
+
+    &-articulos {
+      @extend %text-center;
+      @include tablet {
+        @include display(grid, $grid-template-columns: repeat(2,3fr), $grid-column-gap:$space);
+
+      }
+      @include desktop {
+         @include display(grid, $grid-template-columns: repeat(3,2fr), $grid-column-gap:$space);
+
+           max-width: 1600px;
+
+      }
+      &-item {
+        width: 300px;
+        @extend %padding;
+        @extend %darkcolors;
+        @extend %shadow;
+        @extend %center;
+        @extend %margin-bottom;
+          @extend %text-left;
+        h3 {
+          @extend %text-left;
+        }
+        a {
+          @include font-size(2);
+          &:last-of-type {
+            text-decoration: underline;
+          }
+        }
+        @include desktop {
+          width:auto;
+        }
+        @include tablet {
+          width:auto;
+        }
+      }
+    }
+  }
+}
+.aye-eventos {
+    @extend %center;
+    @extend %text-center;
+    @extend %block;
+  	position: relative;
+    width:100%;
+    height:auto;
+  iframe {
+  	position: absolute;
+    display:block;
+  	top: 0;
+  	left: 0;
+  	width: 100%;
+  	height: 100%;
+    @extend %shadow;
+  }
+}
+.contacto-content {
+   @extend %text-center;
+   min-height:100vh;
+   .mail {
+      @extend %margin-bottom;
+     filter: drop-shadow( 2px 3px 5px rgba(0, 0, 0, .3));
+   }
+   address {
+      max-width:300px;
+      @extend %center;
+      @include tablet {
+        max-width:640px;
+        @include display(grid, $grid-template-columns: repeat(2,2fr),  $grid-column-gap: 20px);
+      }
+      @include desktop {
+        max-width:640px;
+        @include display(grid, $grid-template-columns: repeat(2,2fr),  $grid-column-gap: 20px);
+      }
+    span {
+      @extend %margin-top;
+    }
+    a {
+      width:300px;
+
+      @extend %margin-bottom;
+    }
+    iframe {
+      width:300px;
+
+      @extend %shadow;
+      height:230px;
+      margin-bottom:20px;
+    }
+  }
+
+  &-follow {
+    @extend %absolute;
+    @extend %full-width;
+    @include offset($bottom: 0, $left:0);
+    padding-bottom:120px;
+    @extend %darkcolors;
+		border-top: $bdark;
+    @include box-shadow(0, -5px, 8px, rgba(0,0,0,0.2));
+    img {
+      width:70px;
+    }
+    a {
+      @extend %margin-bottom;
+      @extend %margin-right-left;
+    }
+  }
+}
+.lb {
+
+  @extend %full-width;
+  @extend %darkcolors;
+  @extend %padding;
+  @extend %fixed;
+  @extend %full-height;
+  display:none;
+  @include offset($top: 0, $left:0, $z-index:100);
+  &:target {
+    display:block;
+    @include animation(fadein 0.5s linear 0s 1 forwards);
+  }
+
+  .lb-content {
+      max-width:1600px;
+      @extend %center;
+      @extend %relative;
+      @extend %full-width;
+      @extend %full-height;
+      overflow-y: scroll;
+      height: 100vh;
+      &-img {
+          max-width:800px;
+          @include desktop {
+            position:fixed;
+            width:50%;
+          }
+          @include tablet {
+            position:fixed;
+            width:39%;
+          }
+      }
+      &-text {
+          @extend %margin-bottom;
+          float:right;
+          margin-right:20px;
+          margin-left:$space;
+          padding-bottom:30px;
+          @include desktop {
+            width:48%;
+          }
+          @include tablet {
+            width:58%;
+          }
+          h1 {
+            @include font-size(4);
+            @extend %text-left;
+            font-family:$secondtitlefont;
+          }
+
+          h3 {
+            @include font-size(2);
+            @extend %text-left;
+            @extend %margin-top;
+            @extend %margin-bottom;
+          }
+
+      }
+    }
+    a {
+      font-family:  $mainfont;
+      @include font-size(0);
+      text-decoration: underline;
+      &.lb-close {
+        @extend %fixed;
+        @include offset($top: $space, $right:$space, $z-index:4);
+        @extend %darkcolors;
+        padding:$space/2;
+        @extend %shadow;
+        text-decoration: none;
+        @include font-size(3);
+        line-height: 1em;
+      }
+    }
+    time, address {
+      @extend %margin-bottom;
+      @include font-size(1);
+      font-style: italic;
+
+    }
+}

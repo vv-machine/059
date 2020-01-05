@@ -1,0 +1,83 @@
+#header {
+		@extend %full-width;
+		@extend %fixed;
+		@include offset($top: 0, $left:0, $z-index:2, $height:80px);
+		@extend %darkcolors;
+		@extend %shadow;
+	    padding:5px $space;
+		opacity:0;
+}
+
+#main {
+		@extend %absolute;
+		@extend %full-width;
+		scroll-snap-type: y mandatory;
+		@include offset($top: 0, $left:0, $z-index:1);
+		.l-section {
+				@extend %relative;
+				@extend %full-width;
+				z-index:2;
+				padding-top:98px;
+				scroll-snap-align: start;
+			}
+
+			&::after {
+		    @extend %pseudo;
+		    @extend %fixed;
+		    @extend %block;
+		    @extend %full-width;
+		    @include offset($top: 0, $right:10%, $z-index:0);
+		    background:url(../img/smoke.png) no-repeat center center/100% 100%;
+
+		    -moz-animation:move 470s linear infinite alternate, fade 80s linear infinite alternate;
+		    -webkit-animation:move 470s linear infinite alternate, fade 80s linear infinite alternate;
+		    animation:move 470s linear infinite alternate,  fade 80s linear infinite alternate;
+		    -webkit-transform-origin:left bottom;
+		    -moz-transform-origin:left bottom;
+		    transform-origin: left bottom;
+		  }
+			&::before {
+				@extend %pseudo;
+				@extend %fixed;
+				@extend %block;
+				@include offset($top: -100%, $right:-20%, $z-index:-1, $height:200%);
+				background:url(../img/smoke.png) no-repeat center center/100% 100%;
+				width:200%;
+				-moz-animation:move 330s  linear infinite alternate, fade 150s linear infinite alternate;
+				-webkit-animation:move 330s  linear infinite alternate, fade 150s linear infinite alternate;
+				animation:move 330s  linear infinite alternate, fade 150s linear infinite alternate;
+
+				-webkit-transform-origin: center bottom;
+				-moz-transform-origin: center bottom;
+				transform-origin: center bottom;
+			}
+}
+
+#footer {
+	@include offset($bottom: 0, $left:0, $z-index:2, $height:auto);
+	@extend %fixed;
+	@extend %full-width;
+
+	@extend %darkcolors;
+	@extend %shadow;
+	@extend %text-center;
+	padding: $space 0;
+  @include box-shadow(0, -4px, 5px, rgba(0,0,0,0.2));
+	p {
+		@include font-size(-2);
+			@include desktop {
+				@include font-size(-1);
+			}
+	}
+
+	p:nth-of-type(2) {
+		@extend %absolute;
+		@include offset( $top: 25%, $right:1%);
+		a {
+				@include font-size(0);
+		}
+	}
+
+}
+
+img { 	@extend %full-width; }

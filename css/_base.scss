@@ -1,0 +1,95 @@
+@import 'reset';
+
+html {
+	scroll-behavior: smooth;
+	&::after {
+				@extend %pseudo;
+				@extend %fixed;
+				@extend %block;
+				@include offset($top: -20%, $right:5%, $z-index:-1, $height:150%);
+				background:url(../img/smoke.png) no-repeat center center/100% 100%;
+				width:150%;
+				-moz-animation:move 410s linear infinite alternate, fade 200s linear infinite alternate;
+				-webkit-animation:move 410s linear infinite alternate, fade 200s linear infinite alternate;
+				animation:move 410s linear infinite alternate, fade 200s  linear infinite alternate;
+				transform-origin: center center;
+	}
+}
+body {
+
+	@include desktop {
+		@include font-size(0);
+	}
+	@include font-size(0);
+	@extend %maincolors;
+	font-family:$mainfont;
+	counter-reset: section;
+	@extend %full-width;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	height:100vh;
+
+
+	&::-webkit-scrollbar { width: 0 !important }
+}
+main  {
+		opacity:0;
+
+		p {
+		@extend %margin-bottom;
+		}
+
+	}
+
+h1 {
+	font-family:$titlefont;
+	@extend %text-uppercase;
+	@include font-size(5);
+	@extend %full-width;
+	@extend %text-center;
+	@extend %text-shadow;
+
+	@include desktop {
+			@include font-size(6);
+	}
+	@include tablet {
+		@include font-size(6);
+	}
+}
+
+h3 {
+	font-family:$secondtitlefont;
+	@extend %text-uppercase;
+	@extend %text-center;
+	@include font-size(5);
+}
+
+a {
+	font-family:$secondtitlefont;
+  @include font-size(3);
+  text-decoration:none;
+	outline: none;
+	h3 {
+		@include font-size(3);
+	}
+	&:active{
+		color:lighten(  rgba(0,78,38,0.7), 15% );
+	}
+
+}
+
+strong {
+	font-family:$secondtitlefont;
+	@include font-size(2);
+	@include desktop {
+		@include font-size(3);
+	}
+
+}
+
+label {
+	font-family:$secondtitlefont;
+}
+p {
+		@include font-size(0);
+}

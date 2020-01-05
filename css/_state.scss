@@ -1,0 +1,27 @@
+body.active {
+		height:auto;
+		overflow-y:scroll;
+	  background-color:$bg;
+    header {
+      @include animation(fadein 0.2s linear 0s 1 forwards);
+      opacity:1;
+    }
+    html {
+      display:block;
+    }
+    main {
+      @include animation(fadein 0.5s linear 0s 1 forwards);
+			opacity:1;
+    }
+}
+body.loading {
+  background: black;
+  html {
+    display:none;
+
+  }
+}
+#enter.active {
+    @extend %block;
+    opacity:1;
+  }

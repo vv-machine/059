@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+@font-face {
+	font-family: 'Freshman';
+	font-style: normal;
+	font-weight: normal;
+	src: url('../fonts/freshman-webfont.eot');
+	src: url('../fonts/freshman-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/freshman-webfont.woff2') format('woff2'),
+		 url('../fonts/freshman-webfont.woff') format('woff'),
+		 url('../fonts/freshman-webfont.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'tgl_0-1451_engschriftregular';
+	font-style: normal;
+	font-weight: normal;
+	src: url('../fonts/tgl_0-1451eng-webfont.eot');
+	src: url('../fonts/tgl_0-1451eng-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/tgl_0-1451eng-webfont.woff2') format('woff2'),
+		 url('../fonts/tgl_0-1451eng-webfont.woff') format('woff'),
+		 url('../fonts/tgl_0-1451eng-webfont.ttf') format('truetype');
+}
