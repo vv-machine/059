@@ -214,6 +214,15 @@ $secondtitlefont: 'tgl_0-1451_engschriftregular';
   -moz-animation: $animation;
   animation: $animation;
 }
+@mixin firefox-only {
+  @at-root {
+    @-moz-document url-prefix() {
+      & {
+        @content;
+      }
+    }
+  }
+}
 
 @include keyframes(move) {
   0% {

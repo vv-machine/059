@@ -127,17 +127,22 @@
 
 }
 .first {
+
   h1 {
 
     @include font-size(5);
-    line-height: 0.95em;
-    margin-top:10px;
+    line-height: 0.95;
     @include tablet {
       @include font-size(7);
-      line-height:1.1em;
+      line-height:1;
+      @include firefox-only {
+        margin-bottom:-7px;
+      }
   	}
     @include desktop {
-
+      @include firefox-only {
+        margin-bottom:-7px;
+      }
       @include font-size(7);
       line-height:1;
 
@@ -147,7 +152,8 @@
     height:auto;
     @extend %full-width;
     @extend %shadow;
-    background-color: $lighttrans;
+    background-color:transparent;
+    margin-bottom:10px;
     iframe {
         margin-bottom:-5px;
       }

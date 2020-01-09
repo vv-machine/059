@@ -971,14 +971,18 @@ p {
 .first h1 {
   font-size: 42.724609375px;
   line-height: 1.25em;
-  line-height: 0.95em;
-  margin-top: 10px;
+  line-height: 0.95;
 }
 @media (min-width: 768px) and (max-width: 1123px) {
   .first h1 {
     font-size: 66.7572021484px;
     line-height: 1.25em;
-    line-height: 1.1em;
+    line-height: 1;
+  }
+  @-moz-document url-prefix() {
+    .first h1 {
+      margin-bottom: -7px;
+    }
   }
 }
 @media (min-width: 1124px) {
@@ -987,10 +991,16 @@ p {
     line-height: 1.25em;
     line-height: 1;
   }
+  @-moz-document url-prefix() {
+    .first h1 {
+      margin-bottom: -7px;
+    }
+  }
 }
 .first-gallery {
   height: auto;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: transparent;
+  margin-bottom: 10px;
 }
 .first-gallery iframe {
   margin-bottom: -5px;
