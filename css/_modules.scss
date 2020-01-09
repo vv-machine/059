@@ -133,16 +133,14 @@
     line-height: 0.95em;
     margin-top:10px;
     @include tablet {
-      margin-top:0px;
-      margin-bottom:-15px;
-      line-height:1.1em;
       @include font-size(7);
+      line-height:1.1em;
   	}
     @include desktop {
-      margin-top:1px;
-      line-height:1;
+
       @include font-size(7);
-      margin-bottom:-12px;
+      line-height:1;
+
   	}
   }
   &-gallery {
