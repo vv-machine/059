@@ -63,27 +63,44 @@
   }
 }
 .header-content {
-  @include display(grid, $grid-template-columns:130px 8fr 2fr);
+  @include display(grid, $grid-template-columns:130px auto 50px, $grid-column-gap: $space);
   max-width: 1600px;
+  @extend %relative;
+
   @extend %center;
+  @extend %full-width;
 		.logo a img{
 			margin-left:-8px;
       width:140px;
 		}
 }
-
+.header-nav {
+  width:80%;
+  @include tablet {
+      width:100%;
+  }
+}
 .header-nav ul{
   @include display(block, $grid-template-columns:  null);
-  @extend %margin-right-left;
-  @include tablet {
-    @include display(grid, $grid-template-columns: repeat(3,2fr));
-  }
+
   @include desktop {
+    margin-right:$space;
     @include display(grid, $grid-template-columns: repeat(3,2fr));
+    li {
+     text-align: center;
+    }
+    li:first-of-type {
+     text-align: left;
+    }
+    li:last-of-type {
+     text-align: right;
+    }
   }
+
   a {
+    @extend %text-center;
     @include desktop {
-      @include font-size(3);
+      font-size:31px;
     }
     @include font-size(2);
     @extend %text-uppercase;

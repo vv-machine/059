@@ -49,7 +49,7 @@ h1 {
   margin-bottom: 10px;
 }
 
-.contacto-content-follow a, .aye, .header-nav ul {
+.contacto-content-follow a, .aye {
   margin-right: 10px;
   margin-left: 10px;
 }
@@ -59,7 +59,7 @@ h1 {
   margin-right: auto;
 }
 
-.contacto-content, .aye-eventos, .aye-content-articulos, .first-content-text:nth-of-type(2) strong, .first-content-text, .first-content-strong, #enter, #footer, h3, h1 {
+.contacto-content, .aye-eventos, .aye-content-articulos, .first-content-text:nth-of-type(2) strong, .first-content-text, .first-content-strong, .header-nav ul a, #enter, #footer, h3, h1 {
   text-align: center;
 }
 
@@ -75,7 +75,7 @@ h1 {
   position: fixed;
 }
 
-.lb .lb-content, .first-content-text:nth-of-type(2) ol li, .first-content-strong, .first-content, #enter label, #enter strong, #main .l-section {
+.lb .lb-content, .first-content-text:nth-of-type(2) ol li, .first-content-strong, .first-content, .header-content, #enter label, #enter strong, #main .l-section {
   position: relative;
 }
 
@@ -87,7 +87,7 @@ h1 {
   display: block;
 }
 
-.lb .lb-content, .lb, .contacto-content-follow, .first-content-text:nth-of-type(2) strong, .first-content, .first-gallery, #enter label:hover:last-of-type::after, #enter label:active:last-of-type::after, #enter label:hover:first-of-type::after, #enter label:active:first-of-type::after, #enter, img, #footer, #main::after, #main .l-section, #main, #header, h1, body {
+.lb .lb-content, .lb, .contacto-content-follow, .first-content-text:nth-of-type(2) strong, .first-content, .first-gallery, .header-content, #enter label:hover:last-of-type::after, #enter label:active:last-of-type::after, #enter label:hover:first-of-type::after, #enter label:active:first-of-type::after, #enter, img, #footer, #main::after, #main .l-section, #main, #header, h1, body {
   width: 100%;
 }
 
@@ -905,7 +905,8 @@ p {
 
 .header-content {
   display: grid;
-  grid-template-columns: 130px 8fr 2fr;
+  grid-template-columns: 130px auto 50px;
+  grid-column-gap: 10px;
   max-width: 1600px;
 }
 .header-content .logo a img {
@@ -913,19 +914,32 @@ p {
   width: 140px;
 }
 
+.header-nav {
+  width: 80%;
+}
+@media (min-width: 768px) and (max-width: 1123px) {
+  .header-nav {
+    width: 100%;
+  }
+}
+
 .header-nav ul {
   display: block;
 }
-@media (min-width: 768px) and (max-width: 1123px) {
+@media (min-width: 1124px) {
   .header-nav ul {
+    margin-right: 10px;
     display: grid;
     grid-template-columns: repeat(3, 2fr);
   }
-}
-@media (min-width: 1124px) {
-  .header-nav ul {
-    display: grid;
-    grid-template-columns: repeat(3, 2fr);
+  .header-nav ul li {
+    text-align: center;
+  }
+  .header-nav ul li:first-of-type {
+    text-align: left;
+  }
+  .header-nav ul li:last-of-type {
+    text-align: right;
   }
 }
 .header-nav ul a {
@@ -934,8 +948,7 @@ p {
 }
 @media (min-width: 1124px) {
   .header-nav ul a {
-    font-size: 27.34375px;
-    line-height: 1.25em;
+    font-size: 31px;
   }
 }
 
