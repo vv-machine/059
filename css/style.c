@@ -37,7 +37,7 @@ h1 {
   color: rgba(0, 0, 0, 0.95);
 }
 
-.lb, .first-content-text, #enter label, #enter strong {
+.lb, .aye-content-articulos-item, .first-content-text, #enter label, #enter strong {
   padding: 10px;
 }
 
@@ -75,7 +75,7 @@ h1 {
   position: fixed;
 }
 
-.lb .lb-content-img, .lb .lb-content, .aye-content-articulos-item, .first-content-text:nth-of-type(2) ol li, .first-content-strong, .first-content, .header-content, #enter label, #enter strong, #main .l-section {
+.lb .lb-content, .first-content-text:nth-of-type(2) ol li, .first-content-strong, .first-content, .header-content, #enter label, #enter strong, #main .l-section {
   position: relative;
 }
 
@@ -83,11 +83,11 @@ h1 {
   position: absolute;
 }
 
-.lb .lb-content-img, .aye-eventos, .first-content-strong, #enter label:hover:last-of-type::after, #enter label:active:last-of-type::after, #enter label:hover:first-of-type::after, #enter label:active:first-of-type::after, #enter strong, #main::before, #main::after, html::after, #enter.active {
+.aye-eventos, .first-content-strong, #enter label:hover:last-of-type::after, #enter label:active:last-of-type::after, #enter label:hover:first-of-type::after, #enter label:active:first-of-type::after, #enter strong, #main::before, #main::after, html::after, #enter.active {
   display: block;
 }
 
-.lb .lb-content, .lb, .contacto-content-follow, .first-content-text:nth-of-type(2) strong, .first-content, .first-gallery, .header-content, #enter label:hover:last-of-type::after, #enter label:active:last-of-type::after, #enter label:hover:first-of-type::after, #enter label:active:first-of-type::after, #enter, img, #footer, #main::after, #main .l-section, #main, #header, h1, body {
+.lb .lb-content-img, .lb .lb-content, .lb, .contacto-content-follow, .first-content-text:nth-of-type(2) strong, .first-content, .first-gallery, .header-content, #enter label:hover:last-of-type::after, #enter label:active:last-of-type::after, #enter label:hover:first-of-type::after, #enter label:active:first-of-type::after, #enter, img, #footer, #main::after, #main .l-section, #main, #header, h1, body {
   width: 100%;
 }
 
@@ -684,8 +684,8 @@ main {
 }
 h1 {
   font-family: "Freshman";
-  font-size: 42.724609375px;
   line-height: 1;
+  border: 1px solid red;
 }
 @media (min-width: 1124px) {
   h1 {
@@ -759,7 +759,7 @@ p {
 }
 #main .l-section {
   z-index: 2;
-  padding-top: 103px;
+  padding-top: 98px;
   scroll-snap-align: start;
 }
 #main::after {
@@ -1071,7 +1071,7 @@ p {
   max-width: 1600px;
 }
 .aye-content {
-  padding: 0 10px;
+  padding: 10px;
 }
 @media (min-width: 1124px) {
   .aye-content {
@@ -1097,16 +1097,12 @@ p {
 }
 .aye-content-articulos-item {
   width: 300px;
-  padding: 10px 10px 30px 10px;
 }
 .aye-content-articulos-item a {
   font-size: 21.875px;
   line-height: 1.25em;
 }
 .aye-content-articulos-item a:last-of-type {
-  display: block;
-  position: absolute;
-  bottom: 10px;
   text-decoration: underline;
 }
 @media (min-width: 1124px) {
@@ -1135,7 +1131,7 @@ p {
 }
 
 .contacto-content {
-  min-height: calc(100vh - 150px);
+  min-height: 100vh;
 }
 .contacto-content .mail {
   filter: drop-shadow(2px 3px 5px rgba(0, 0, 0, 0.3));
@@ -1197,8 +1193,6 @@ p {
   height: 100vh;
 }
 .lb .lb-content-img {
-  width: 96.5%;
-  margin-right: 10px;
   max-width: 800px;
 }
 @media (min-width: 1124px) {
@@ -1260,4 +1254,4 @@ p {
   font-style: italic;
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style.c.map */

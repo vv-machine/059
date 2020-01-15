@@ -17,7 +17,7 @@
 				@extend %relative;
 				@extend %full-width;
 				z-index:2;
-				padding-top:98px;
+				padding-top:103px;
 				scroll-snap-align: start;
 			}
 
@@ -59,6 +59,7 @@
 	}
 	@include desktop {
 	padding-bottom: 0%;
+
 	}
 }
 #footer {

@@ -255,7 +255,7 @@
   @extend %center;
 
   &-content {
-    padding:$space;
+    padding: 0 $space;
     @include desktop {
 
     @include display(grid, $grid-template-columns:3fr 1fr, $grid-gap:$space);
@@ -275,10 +275,11 @@
       }
       &-item {
         width: 300px;
-        @extend %padding;
+        padding: $space $space 30px $space;
         @extend %darkcolors;
         @extend %shadow;
         @extend %center;
+        @extend %relative;
         @extend %margin-bottom;
           @extend %text-left;
         h3 {
@@ -287,6 +288,9 @@
         a {
           @include font-size(2);
           &:last-of-type {
+            display:block;
+            position:absolute;
+            bottom:$space;
             text-decoration: underline;
           }
         }
@@ -320,7 +324,7 @@
 .contacto-content {
 
    @extend %text-center;
-   min-height:100vh;
+     min-height: calc(100vh - 150px);
    .mail {
       @extend %margin-bottom;
      filter: drop-shadow( 2px 3px 5px rgba(0, 0, 0, .3));
@@ -393,6 +397,10 @@
       overflow-y: scroll;
       height: 100vh;
       &-img {
+          width:96.5%;
+          @extend %relative;
+          @extend %block;
+          margin-right:$space;
           max-width:800px;
           @include desktop {
             position:fixed;

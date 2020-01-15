@@ -34,27 +34,27 @@ body {
 }
 main  {
 		opacity:0;
-
 		p {
 		@extend %margin-bottom;
 		}
-
 	}
 
 h1 {
 	font-family:$titlefont;
 	@extend %text-uppercase;
-	@include font-size(5);
-	line-height: 1em;
+	font-size: 42.724609375px;
+	line-height: 1;
 	@extend %full-width;
 	@extend %text-center;
 	@extend %text-shadow;
 
 	@include desktop {
-			@include font-size(6);
+			font-size: 53.4057617188px;
+			line-height: 1;
 	}
 	@include tablet {
-		@include font-size(6);
+		font-size: 53.4057617188px;
+		line-height: 1;
 	}
 }
 
